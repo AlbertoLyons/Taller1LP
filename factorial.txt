@@ -1,0 +1,16 @@
+int factorial(int n) {
+    if (n <= 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+void main(void) {
+    int num;
+    int result;
+    num = 5;
+    result = factorial(num);
+    /* Este programa calcula el factorial de un número */
+    return;
+}

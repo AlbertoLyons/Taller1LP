@@ -1,0 +1,29 @@
+int buscar(int arr[], int size, int valor) {
+    int i;
+    int encontrado;
+    
+    encontrado = 0;
+    i = 0;
+    while (i < size) {
+        if (arr[i] == valor) {
+            encontrado = 1;
+        }
+        i = i + 1;
+    }
+    return encontrado;
+}
+
+void main(void) {
+    int numeros[10];
+    int resultado;
+    int i;
+    
+    i = 0;
+    while (i < 10) {
+        numeros[i] = i * 2;
+        i = i + 1;
+    }
+    
+    resultado = buscar(numeros, 10, 6);
+    // Busca el valor 6 en el array
+}

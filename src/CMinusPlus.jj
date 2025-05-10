@@ -1,0 +1,152 @@
+PARSER_BEGIN(CMinusPlus)
+import java.io.*;
+
+public class CMinusPlus {
+	public static void main(String[] args) throws IOException {
+		String LineaEntera = " ";
+		FileReader f = new FileReader("ejemplo.txt");
+ 		BufferedReader bf = new BufferedReader(f);
+		String Linea = bf.readLine();
+	     	while(Linea != null) {
+			LineaEntera += Linea;
+			Linea = bf.readLine();
+	        }
+		f.close();
+		try{
+			new CMinusPlus(new java.io.StringReader(LineaEntera)).S();
+			System.out.println("La sintaxis es CORRECTA");
+		}catch(Throwable e){
+			System.out.println("ERROR en la sintaxis: "+ e.getMessage());
+		}
+	}
+}
+
+PARSER_END(CMinusPlus)
+
+// Default whitespace handling
+SKIP : { " " | "\t" | "\n" | "\r" }
+
+// Multi-line comments
+MORE : { "/*" : IN_COMMENT }
+
+<IN_COMMENT>MORE : { < ~[] > }
+<IN_COMMENT>SKIP : { "*/" : DEFAULT }
+
+// Single-line comments
+MORE : { "//" : IN_SINGLE_LINE_COMMENT }
+
+<IN_SINGLE_LINE_COMMENT>MORE : { < ~[] > }
+//<IN_SINGLE_LINE_COMMENT>SKIP : { "\n" | "\r" : DEFAULT }
+  
+
+TOKEN : {
+  < ELSE: (["e","E"]["l","L"]["s","S"]["e","E"]) >
+| < IF: (["i","I"]["f","F"]) >
+| < INT: (["i","I"]["n","N"]["t","T"]) >
+| < RETURN: (["r","R"]["e","E"]["t","T"]["u","U"]["r","R"]["n","N"]) >
+| < VOID: (["v","V"]["o","O"]["i","I"]["d","D"]) >
+| < WHILE:  (["w","W"]["h","H"]["i","I"]["l","L"]["e","E"]) >
+| < DO: (["d","D"]["o","O"]) >
+| < ID: (["_"] | ["a"-"z","A"-"Z"]) (["_","a"-"z","A"-"Z","0"-"9"])* >
+| < NUM: (["0"]) | (["1"-"9"] (["0"-"9"])*) >
+| < RELOP: "<=" | "<" | ">" | ">=" | "==" | "!=" >
+| < ADDOP: "+" | "-" >
+| < MULOP: "*" | "/" >
+
+}
+
+/* 0 */ void S(): {}
+{ program() <EOF> }
+
+/* 1 */ void program():	{}
+{ declaration_list() }
+
+/* 2 */ void declaration_list(): {}
+{ ( declaration() )+ }
+
+/* 3 */ void declaration(): {}
+{ LOOKAHEAD(var_declaration()) var_declaration() | fun_declaration() }
+
+/* 4 */ void var_declaration(): {}
+{ type_specifier() <ID> ("[" <NUM> "]")? ";" }
+
+/* 5 */ void type_specifier(): {}
+{ <INT> | <VOID> }
+
+/* 6 */ void fun_declaration(): {}
+{ type_specifier() <ID> "(" params() ")" compound_stmt() }
+
+/* 7 */ void params(): {}
+{ LOOKAHEAD(param_list()) param_list() | <VOID> }
+
+/* 8 */ void param_list(): {}
+{ param() ( "," param() )* }
+
+/* 9 */ void param(): {}
+{ type_specifier() <ID> ("[]")? }
+
+/* 10 */ void compound_stmt(): {}
+{ "{" local_declarations() statement_list() "}" }
+
+/* 11 */ void local_declarations(): {}
+{ ( var_declaration() )* }
+
+/* 12 */ void statement_list(): {}
+{ ( statement() )* }
+
+/* 13 */ void statement(): {}
+{
+    expression_stmt() 
+  | compound_stmt() 
+  | selection_stmt() 
+  | iteration_stmt() 
+  | return_stmt()
+}
+
+/* 14 */ void expression_stmt(): {}
+{ expression() (";")? }
+
+/* 15 */ void selection_stmt(): {}
+{ <IF> "(" expression() ")" statement() (LOOKAHEAD(2) <ELSE> statement())? }
+/* 16 */ void iteration_stmt(): {}
+{ <WHILE> "(" expression() ")" statement() }
+
+/* 17 */ void return_stmt(): {}
+{ <RETURN> (expression())? ";" }
+
+/* 18 */ void expression(): {}
+{ LOOKAHEAD(var() "=") var() "=" expression() | simple_expression() }
+
+/* 19 */ void var(): {}
+{ <ID> ("[" expression() "]")? }
+
+/* 20 */ void simple_expression(): {}
+{ additive_expression() (relop() additive_expression())? }
+
+/* 21 */ void relop(): {}
+{ <RELOP> }
+
+/* 22 */ void additive_expression(): {}
+{ term() ( addop() term() )*  }
+
+/* 23 */ void addop(): {}
+{ <ADDOP> }
+
+/* 24 */ void term(): {}
+{ factor() ( mulop() factor() )* }
+
+/* 25 */ void mulop(): {}
+{ <MULOP> }
+
+/* 26 */ void factor(): {}
+{ "(" expression() ")" | LOOKAHEAD(call()) call() | LOOKAHEAD(var()) var() | <NUM> }
+
+/* 27 */ void call(): {}
+{ <ID> "(" args() ")" }
+
+/* 28 */ void args(): {}
+{ ( arg_list() )? }
+
+/* 29 */ void arg_list(): {}
+{ expression() ( "," expression() )* }
+

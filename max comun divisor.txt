@@ -1,0 +1,25 @@
+int mcd(int a, int b) {
+    int temp;
+    
+    while (b <> 0) {
+        temp = b;
+        b = a - a / b * b;  /* Calcula el residuo */
+        a = temp;
+    }
+    
+    return a;
+}
+
+void main(void) {
+    int num1;
+    int num2;
+    int resultado;
+    
+    num1 = 48;
+    num2 = 18;
+    
+    resultado = mcd(num1, num2);
+    /* Este programa calcula el máximo común 
+       divisor de dos números usando 
+       el algoritmo de Euclides */
+}

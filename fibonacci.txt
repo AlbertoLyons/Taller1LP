@@ -1,0 +1,33 @@
+int fibonacci(int n) {
+    int a;
+    int b;
+    int temp;
+    int i;
+    
+    if (n <= 1) {
+        return n;
+    }
+    
+    a = 0;
+    b = 1;
+    i = 2;
+    
+    while (i <= n) {
+        temp = a + b;
+        a = b;
+        b = temp;
+        i = i + 1;
+    }
+    
+    return b;
+}
+
+void main(void) {
+    int n;
+    int resultado;
+    
+    n = 10;
+    resultado = fibonacci(n);
+    /* Este programa calcula el n-ésimo 
+       número de Fibonacci */
+}
