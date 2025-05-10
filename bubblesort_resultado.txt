@@ -1,0 +1,237 @@
+void ordenarBurbuja(int arr[], int tamano) {
+    int i;
+    int j;
+    int temp;
+    
+    i = 0;
+    while (i < tamano - 1) {
+        j = 0;
+        while (j < tamano - i - 1) {
+            if (arr[j] > arr[j + 1]) {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+            j = j + 1;
+        }
+        i = i + 1;
+    }
+}
+
+void main(void) {
+    int numeros[5];
+    
+    numeros[0] = 5;
+    numeros[1] = 3;
+    numeros[2] = 8;
+    numeros[3] = 1;
+    numeros[4] = 9;
+    
+    ordenarBurbuja(numeros, 5);
+    /* Este programa ordena un array 
+       utilizando el algoritmo de burbuja */
+}
+
+La sintaxis es CORRECTA. Tokens de resultado:
+
+Linea 1 (void ordenarBurbuja(int arr[], int tamano) {)
+void -> <VOID>
+ordenarBurbuja -> <ID>
+( -> simbolo especial
+int -> <INT>
+arr -> <ID>
+[ -> simbolo especial
+] -> simbolo especial
+, -> simbolo especial
+int -> <INT>
+tamano -> <ID>
+) -> simbolo especial
+{ -> simbolo especial
+
+Linea 2-6 (int i;
+    int j;
+    int temp;
+    
+    i = 0;)
+int -> <INT>
+i -> <ID>
+; -> simbolo especial
+int -> <INT>
+j -> <ID>
+; -> simbolo especial
+int -> <INT>
+temp -> <ID>
+; -> simbolo especial
+i -> <ID>
+= -> simbolo especial
+0 -> <NUM>
+; -> simbolo especial
+
+Linea 7 (while (i < tamano - 1) {)
+while -> <WHILE>
+( -> simbolo especial
+i -> <ID>
+< -> <RELOP>
+tamano -> <ID>
+- <ADDOP>
+1 -> <NUM>
+) -> simbolo especial
+{ -> simbolo especial
+
+Linea 8 (j = 0;)
+j -> <ID>
+= -> simbolo especial
+0 -> <NUM>
+; -> simbolo especial
+
+Linea 9 (while (j < tamano - i - 1) {)
+while -> <WHILE>
+( -> simbolo especial
+j -> <ID>
+< -> <RELOP>
+tamano -> <ID>
+- -> <ADDOP>
+i -> <ID>
+- -> <ADDOP>
+1 -> <NUM>
+) -> simbolo especial
+{ -> simbolo especial
+
+Linea 10 (if (arr[j] > arr[j + 1]) {)
+if -> <IF>
+( -> simbolo especial
+arr -> <ID>
+[ -> simbolo especial
+j -> <ID>
+] -> simbolo especial
+> -> <RELOP>
+arr -> <ID>
+[ -> simbolo especial
+j -> <ID>
++ -> <ADDOP>
+1 -> <NUM>
+] -> simbolo especial
+) -> simbolo especial	
+{ -> simbolo especial
+
+Linea 11-14 (temp = arr[j];
+       arr[j] = arr[j + 1];
+       arr[j + 1] = temp;
+    })
+temp -> <ID>
+= -> simbolo especial
+arr -> <ID>
+[ -> simbolo especial
+j -> <ID>
+] -> simbolo especial
+; -> simbolo especial
+arr -> <ID>
+[ -> simbolo especial
+j -> <ID>
+] -> simbolo especial
+= -> simbolo especial
+arr -> <ID>
+[ -> simbolo especial
+j -> <ID>
++ -> <ADDOP>
+1 -> <NUM>
+] -> simbolo especial
+; -> simbolo especial
+arr -> <ID>
+[ -> simbolo especial
+j -> <ID>
++ -> <ADDOP>
+1 -> <NUM>
+] -> simbolo especial
+= -> simbolo especial
+temp -> <ID>
+; -> simbolo especial
+} -> simbolo especial
+
+Linea 15-19 (j = j + 1;
+        }
+        i = i + 1;
+    }
+})
+j -> <ID>
+= -> simbolo especial
+j -> <ID>
++ -> <ADDOP>
+1 -> <NUM>
+; -> simbolo especial
+} -> simbolo especial
+i -> <ID>
+= -> simbolo especial
+i -> <ID>
++ -> <ADDOP>
+1 -> <NUM>
+; -> simbolo especial
+} -> simbolo especial
+} -> simbolo especial
+
+Linea 21 (void main(void) {)
+void -> <VOID>
+main -> <ID>
+( -> simbolo especial
+void -> <VOID>
+) -> simbolo especial
+{ -> simbolo especial
+
+Linea 22-28 (int numeros[5];
+    numeros[0] = 5;
+    numeros[1] = 3;
+    numeros[2] = 8;
+    numeros[3] = 1;
+    numeros[4] = 9;)
+int -> <INT>
+numeros -> <ID>
+[ -> simbolo especial
+5 -> <NUM>
+] -> simbolo especial
+; -> simbolo especial
+numeros -> <ID>
+[ -> simbolo especial
+0 -> <num>
+] -> simbolo especial
+= -> simbolo especial
+3 -> <NUM>
+; -> simbolo especial
+numeros -> <ID>
+[ -> simbolo especial
+1 -> <num>
+] -> simbolo especial
+= -> simbolo especial
+8 -> <NUM>
+; -> simbolo especial
+numeros -> <ID>
+[ -> simbolo especial
+2 -> <num>
+] -> simbolo especial
+= -> simbolo especial
+5 -> <NUM>
+; -> simbolo especial
+numeros -> <ID>
+[ -> simbolo especial
+3 -> <num>
+] -> simbolo especial
+= -> simbolo especial
+1 -> <NUM>
+; -> simbolo especial
+numeros -> <ID>
+[ -> simbolo especial
+4 -> <num>
+] -> simbolo especial
+= -> simbolo especial
+9 -> <NUM>
+; -> simbolo especial
+
+Linea 30-31 (ordenarBurbuja(numeros, 5);
+})
+ordenarBurbuja -> <ID>
+( -> simbolo especial
+numeros -> <ID>
+, -> simbolo especial
+5 -> <NUM>
+) -> simbolo especial
+; -> simbolo especial
+} -> simbolo especial

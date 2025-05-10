@@ -1,0 +1,95 @@
+int factorial(int n) {
+    if (n <= 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
+    }
+}
+
+void main(void) {
+    int num;
+    int result;
+    num = 5;
+    result = factorial(num);
+    /* Este programa calcula el factorial de un número */
+    return;
+}
+
+La sintaxis es CORRECTA. Tokens de resultado:
+
+Linea 1 (int factorial(int n) {)
+int -> <INT>
+factorial -> <ID>
+( -> simbolo especial
+int -> <INT>
+n -> <ID>
+) -> simbolo especial
+{ -> simbolo especial
+
+Linea 2 (if (n <= 1) {)
+if -> <IF>
+( -> simbolo especial
+n -> <ID>
+<= -> <RELOP>
+1 -> <NUM>
+) -> simbolo especial
+{ -> simbolo especial
+
+Linea 3 (return 1;)
+return -> <RETURN>
+1 -> <NUM>
+; -> simbolo especial
+
+Linea 4 (} else {)
+} -> simbolo especial
+else -> <ELSE>
+{ -> simbolo especial
+
+Linea 5-7 (return n * factorial(n - 1);
+    }
+})
+return -> <RETURN>
+n -> <ID>
+* -> <MULOP>
+factorial -> <ID>
+( -> simbolo especial
+n -> <ID>
+- -> <ADDOP>
+1 -> <NUM>
+) -> simbolo especial
+; -> simbolo especial
+
+Linea 9 (void main(void) {)
+void -> <VOID>
+main -> <ID>
+( -> simbolo especial
+void -> <VOID>
+) -> simbolo especial
+{ -> simbolo especial
+
+Linea 10-16 (int num;
+    int result;
+    num = 5;
+    result = factorial(num);
+    return;
+}
+int -> <INT>
+num -> <ID>
+; -> simbolo especial
+int -> <INT>
+result -> <ID>
+; -> simbolo especial
+num -> <ID>
+= -> simbolo especial
+5 -> <NUM>
+; -> simboloo especial
+result -> <ID>
+= -> simbolo especial
+factorial -> <ID>
+( -> simbolo especial
+num -> <ID>
+) -> simbolo especial
+; -> simbolo especial
+return -> <RETURN>
+; -> simbolo especial
+} -> simbolo especial

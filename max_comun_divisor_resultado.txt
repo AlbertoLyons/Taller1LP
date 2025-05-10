@@ -1,0 +1,7 @@
+ERROR en la sintaxis: Encountered " <RELOP> "> "" at line 1, column 56.
+Was expecting one of:
+    <NUM> ...
+    "(" ...
+    
+Error en la línea 4 (while (b <> 0) {)
+Detectado en "<>". No existe el valor "<>" en el token RELOP. Por lo que interpreta la primera parte "<", esperando el siguiente token de NUM o un "(" 

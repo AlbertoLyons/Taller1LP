@@ -1,0 +1,69 @@
+/* Programa 1 */
+void main(void) {
+    int a;
+    int b;
+    a = 5;
+    b = 10;
+    if (a < b) {
+        return;
+    } else {
+        return;
+    }
+}
+
+La sintaxis es CORRECTA. Tokens de resultado:
+
+Linea 2 (void main(void) {)
+void -> <VOID>
+main -> <ID>
+( -> simbolo especial
+void -> <VOID>
+{ -> simbolo especial
+
+Linea 3 (int a;)
+int -> <INT>
+a -> <ID>
+; -> simbolo especial
+
+Linea 4 (int b;)
+int -> <INT>
+b -> <ID>
+; -> simbolo especial
+
+Linea 5 (a = 5;)
+a -> <ID>
+= -> simbolo especial
+5 -> <NUM>
+; -> simbolo especial
+
+Linea 6 (b = 10;)
+b -> <ID>
+= -> simbolo especial
+10 -> <ID>
+; -> simbolo especial
+
+Linea 7 (if (a < b) {)
+if -> <IF>
+( -> simbolo especial
+a -> <ID>
+< -> <RELOP>
+b -> <ID>
+) -> simbolo especial
+{ -> simbolo especial
+
+Linea 8 (return;)
+return -> <RETURN>
+; -> simbolo especial
+
+Linea 9 (} else {)
+} -> simbolo especial
+else -> <ELSE>
+{ -> simbolo especial
+
+Linea 10-12 (return;
+	}
+})
+return -> <RETURN>
+; -> simbolo especial
+} -> simbolo especial
+} -> simbolo especial

@@ -1,0 +1,168 @@
+int fibonacci(int n) {
+    int a;
+    int b;
+    int temp;
+    int i;
+    
+    if (n <= 1) {
+        return n;
+    }
+    
+    a = 0;
+    b = 1;
+    i = 2;
+    
+    while (i <= n) {
+        temp = a + b;
+        a = b;
+        b = temp;
+        i = i + 1;
+    }
+    
+    return b;
+}
+
+void main(void) {
+    int n;
+    int resultado;
+    
+    n = 10;
+    resultado = fibonacci(n);
+    /* Este programa calcula el n-ésimo 
+       número de Fibonacci */
+}
+
+La sintaxis es CORRECTA. Tokens de resultado:
+
+Linea 1 (int fibonacci(int n) {)
+int -> <INT>
+fibonacci -> <ID>
+( -> simbolo especial
+int -> <INT>
+n -> <ID>
+) -> simbolo especial
+{ -> simbolo especial
+
+Linea 2-5 (int a;
+    int b;
+    int temp;
+    int i;)
+int -> <INT>
+a -> <ID>
+; -> simbolo especial
+int -> <INT>
+b -> <ID>
+; -> simbolo especial
+int -> <INT>
+temp -> <ID>
+; -> simbolo especial
+int -> <INT>
+i -> <ID>
+; -> simbolo especial
+
+Linea 7 (if (n <= 1) {)
+if -> <IF>
+( -> simbolo especial
+n -> <ID>
+<= -> <RELOP>
+1 -> <NUM>
+{ -> simbolo especial
+
+Linea 8-9 (return n;
+    })
+return -> <RETURN>
+n <ID>
+; -> simbolo especial
+} -> simbolo especial
+
+Linea 11-13 (a = 0;
+    b = 1;
+    i = 2;)
+a -> <ID>
+= -> simbolo especial
+0 -> <NUM>
+; -> simbolo especial
+b -> <ID>
+= -> simbolo especial
+1 -> <NUM>
+; -> simbolo especial
+i -> <ID>
+= -> simbolo especial
+2 -> <NUM>
+; -> simbolo especial
+
+Linea 15 (while (i <= n) {)
+while -> <WHILE>
+( -> simbolo especial
+i -> <ID>
+<= -> <RELOP>
+n -> <ID>
+) -> simbolo especial
+{ -> simbolo especial
+
+Linea 16-20 (temp = a + b;
+        a = b;
+        b = temp;
+        i = i + 1;
+    })
+temp -> <ID>
+= -> simbolo especial
+a -> <ID>
++ -> <ADDOP>
+b -> <ID>
+; -> simbolo especial
+a -> <ID>
+= -> simbolo especial
+b -> <ID>
+; -> simbolo especial
+b -> <ID>
+= -> simbolo especial
+temp -> <ID>
+; -> simbolo especial
+i -> <ID>
+= -> simbolo especial
+i -> <ID>
++ -> <ADDOP>
+1 -> <NUM>
+; -> simbolo especial
+} -> simbolo especial
+
+Linea 22-23 (return b;
+})
+return -> <RETURN>
+b -> <ID>
+; -> simbolo especial
+} -> simbolo especial
+
+Linea 25 (void main(void) {)
+void -> <VOID>
+main -> <ID>
+( -> simbolo especial
+void -> <VOID>
+) -> simbolo especial
+{ -> simbolo especial
+
+Linea 26-31 (int n;
+    int resultado;
+    
+    n = 10;
+    resultado = fibonacci(n);
+})
+int -> <INT>
+n -> <ID>
+; -> simbolo especial
+int -> <INT>
+resultado -> <ID>
+; -> simbolo especial
+n -> <ID>
+= -> simbolo especial
+10 -> <NUM>
+; -> simbolo especial
+resultado -> <ID>
+= -> simbolo especial
+fibonacci -> <ID>
+( -> simbolo especial
+n -> <ID>
+) -> simbolo especial
+; -> simbolo especial
+} -> simbolo especial

@@ -534,7 +534,7 @@ public class CMinusPlus implements CMinusPlusConstants {
 
   static private boolean jj_3_5()
  {
-    if (jj_3R_call_146_3_12()) return true;
+    if (jj_3R_call_145_3_12()) return true;
     return false;
   }
 
@@ -555,13 +555,6 @@ public class CMinusPlus implements CMinusPlusConstants {
     return false;
   }
 
-  static private boolean jj_3R_arg_list_152_18_35()
- {
-    if (jj_scan_token(27)) return true;
-    if (jj_3R_expression_118_3_29()) return true;
-    return false;
-  }
-
   static private boolean jj_3R_var_declaration_71_3_8()
  {
     if (jj_3R_type_specifier_74_3_13()) return true;
@@ -573,9 +566,16 @@ public class CMinusPlus implements CMinusPlusConstants {
     return false;
   }
 
+  static private boolean jj_3R_arg_list_151_18_35()
+ {
+    if (jj_scan_token(27)) return true;
+    if (jj_3R_expression_118_3_29()) return true;
+    return false;
+  }
+
   static private boolean jj_3R_factor_142_26_43()
  {
-    if (jj_3R_call_146_3_12()) return true;
+    if (jj_3R_call_145_3_12()) return true;
     return false;
   }
 
@@ -585,20 +585,20 @@ public class CMinusPlus implements CMinusPlusConstants {
     return false;
   }
 
-  static private boolean jj_3R_arg_list_152_3_33()
+  static private boolean jj_3R_arg_list_151_3_33()
  {
     if (jj_3R_expression_118_3_29()) return true;
     Token xsp;
     while (true) {
       xsp = jj_scanpos;
-      if (jj_3R_arg_list_152_18_35()) { jj_scanpos = xsp; break; }
+      if (jj_3R_arg_list_151_18_35()) { jj_scanpos = xsp; break; }
     }
     return false;
   }
 
-  static private boolean jj_3R_args_149_5_30()
+  static private boolean jj_3R_args_148_5_30()
  {
-    if (jj_3R_arg_list_152_3_33()) return true;
+    if (jj_3R_arg_list_151_3_33()) return true;
     return false;
   }
 
@@ -609,11 +609,11 @@ public class CMinusPlus implements CMinusPlusConstants {
     return false;
   }
 
-  static private boolean jj_3R_args_149_3_23()
+  static private boolean jj_3R_args_148_3_23()
  {
     Token xsp;
     xsp = jj_scanpos;
-    if (jj_3R_args_149_5_30()) jj_scanpos = xsp;
+    if (jj_3R_args_148_5_30()) jj_scanpos = xsp;
     return false;
   }
 
@@ -631,11 +631,11 @@ public class CMinusPlus implements CMinusPlusConstants {
     return false;
   }
 
-  static private boolean jj_3R_call_146_3_12()
+  static private boolean jj_3R_call_145_3_12()
  {
     if (jj_scan_token(ID)) return true;
     if (jj_scan_token(25)) return true;
-    if (jj_3R_args_149_3_23()) return true;
+    if (jj_3R_args_148_3_23()) return true;
     if (jj_scan_token(26)) return true;
     return false;
   }
